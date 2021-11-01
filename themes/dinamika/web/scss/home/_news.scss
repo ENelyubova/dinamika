@@ -1,0 +1,113 @@
+.news{
+	&-panel{
+		position: relative;
+	}
+	&-block{
+		position: relative;
+		width: calc(100% + 20px);
+		margin: 0 -10px;
+		&__item{
+			position: relative;
+			width: calc(100% / 3 - 20px);
+			height: 345px;
+			margin: 0 10px;
+			border-radius: 5px;
+			overflow: hidden;
+			cursor: pointer;
+			transition: all 0.3s linear;
+			&:hover{
+				.news-block__img{
+					img{
+						transform: scale(1.1);
+					}
+				}
+			}
+		}
+		&__img{
+		    img{
+				transition: all 1s ease-out;
+		    }
+	    }
+	    &__body{
+	    	position: absolute;
+	    	width: 100%;
+	    	height: 100%;
+	    	left: 0;
+	    	top: 0;
+	    	padding: 30px;
+			background: linear-gradient(180deg, rgba(8, 17, 27, 0) 38.26%, rgba(8, 17, 27, 0.6) 100%);
+			z-index: 10;
+	    }
+	    &__date{
+	    	position: relative;
+			margin-bottom: 10px;
+			@include fontF($ubuntu, 14px, 400, $color-white);
+		}
+		&__title{
+			font-weight: 500;
+			line-height: 1.2;
+			font-size: 20px;
+			color: $color-white;
+			a{
+			}
+		}
+	}
+	&-arrows{
+		position: absolute;
+		width: 100%;
+		left: 50%;
+		top: 45%;
+		transform: translate(-50%,-50%);
+	}
+}
+/* Внутренняя */
+.page-news{
+	.news-block{
+		display: flex;
+		flex-wrap: wrap;
+		padding-top: 0;
+		&__item{
+			margin-bottom: 20px;
+		}
+	}
+}
+.news-btn-all{
+	width: 100%;
+	text-align: center;
+	.btn{
+		/* font-size: 22px;*/
+	}
+}
+
+@media (max-width: 1430px){
+	
+}
+@media (max-width: 1270px){
+	.news-block{
+		&__item{
+			height: 280px;
+		}
+		&__title{
+			font-size: 18px;
+		}
+	}
+}
+@media (max-width: 1000px){
+	.news-block{
+		&__item{
+			height: 250px;
+			width: calc(100% / 2 - 20px);
+		}
+		&__title{
+			font-size: 16px;
+		}
+		&__body{
+			padding: 15px;
+		}
+	}
+}
+@media (max-width: 480px){
+	.news-block__item{
+		width: 100%;
+	}
+}

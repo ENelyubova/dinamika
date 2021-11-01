@@ -1,0 +1,170 @@
+.product-view{
+	&__info{
+		width: 50%;
+	}
+	&__btn{
+		margin: 30px 0 40px;
+	}
+
+	&__img{
+		width: 50%;
+		padding-left: 80px;
+	}
+	ol, ul{
+	    list-style-position: inside;
+	    li{
+	    	line-height: 1.4;
+	    }
+	}
+}
+/* Аттрибуты */
+.product-attributes{
+	&__item{
+		padding: 10px 0;
+		border-bottom: 2px solid #E9EAF3;
+		font-size: 14px;
+		&:first-child{
+			border-top: 2px solid #E9EAF3;
+		}
+	}
+	&__name{
+		width: 50%;
+		color: $color-text;
+	}
+	&__val{
+		width: 50%;
+	}
+	&__more{
+		display: inline-block;
+		position: relative;
+		margin-top: 10px;
+		font-size: 16px;
+		text-decoration: underline;
+		color: $color-blue;
+		&:after{
+			content: url(../images/icon/more.svg);
+			position: absolute;
+			top: 50%;
+			right: -15px;
+			transform: translateY(-50%) rotate(0);
+		}
+		&.active{
+			&:after{
+				transform: translateY(-20%) rotate(180deg);
+			}
+		}
+		&:hover , &:focus{
+			color: $color-blue;
+		}
+	}
+}
+
+.image-preview{
+	margin: 0 auto;
+	img{
+		max-height: 430px;
+	}
+}
+.image-thumbnail{
+	width: calc(100% + 20px);
+	margin: 0 -10px;
+	margin-top: 20px;
+	&__item{
+		margin: 0 10px;
+		border: 1px solid #D9DDE8;
+		cursor: pointer;
+		&.slick-current{
+			border: 1px solid $color-blue;
+		}
+	}
+	img{
+		max-height: 77px;
+	}
+}
+
+.table-wrap{
+	position: relative;
+	overflow-x: auto;
+}
+.tab-content{
+	table{
+		/* table-layout: fixed;*/
+		width: 100%;
+		border: 1px solid #D9DDE8;
+		border-radius: 10px 10px 0px 0px;
+		white-space: nowrap;
+		overflow-x: auto;
+		thead{
+			background: #F4F4F4;
+			font-weight: 500;
+		}
+		tbody{
+			tr{
+				&:nth-child(even){
+					background: #F8F8F8;
+				}
+			}
+		}
+		td{
+			padding: 20px 10px;
+			text-align: center;
+			border: 1px solid #D9DDE8;
+		}
+	}
+}
+/* Документы */
+.product-docs{
+	margin-bottom: 30px;
+}
+.sertificate{
+	&__item{
+		width: calc(100% / 4);
+		margin-bottom: 15px;
+		img{
+			max-height: 400px;
+		}
+	}
+}
+
+@media (max-width: 1400px){
+	.image-preview{
+		img{
+			max-height: 350px;
+		}
+	}
+}
+@media (max-width: 1270px){
+	.image-preview{
+		img{
+			max-height: 280px;
+		}
+	}
+}
+@media (max-width: 1000px){
+	.product-view{
+		&-top{
+			flex-direction: column;
+		}
+		&__info{
+			width: 100%;
+		}
+		&__img{
+			order: -1;
+			margin-bottom: 30px;
+			padding-left: 0;
+		}
+	}
+}
+@media (max-width: 767px){
+	
+}
+@media (max-width: 600px){
+	.image-preview{
+		img{
+			max-height: 240px;
+		}
+	}
+	.product-view__img{
+		width: 100%;
+	}
+}

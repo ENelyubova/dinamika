@@ -1,0 +1,59 @@
+/* CSS Document */
+@media (max-width: 1600px){
+	.cd-top{
+		left: 30px;
+	}
+}
+@media (max-width: 1560px){
+	.content-site{
+	    font-size: 16px;
+	}
+	.heading{
+		font-size: 40px;
+	}
+}
+@media (max-width: 1430px){
+	.content-site{
+	    width: 1170px;
+	}
+}
+@media (max-width: 1270px){
+	.content-site{
+	    width: 960px;
+	}
+	.pt{
+		padding-top: 50px;
+	}
+	.pb{
+		padding-bottom: 50px;
+	}
+	.heading{
+		font-size: 35px;
+	}
+}
+@media (max-width: 1000px){
+	.cd-top{
+		display: none;
+	}
+	.content-site{
+	    width: 90%;
+	}
+	.heading{
+		font-size: 30px;
+	}
+}
+@media (max-width: 767px){
+	.content-site{
+		width: 90%;
+	    font-size: 14px;
+	}
+	.heading{
+		font-size: 24px;
+	}
+	.pt80{
+		padding-top: 50px;
+	}
+	.pb80{
+		padding-bottom: 50px;
+	}
+}

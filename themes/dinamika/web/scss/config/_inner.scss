@@ -1,0 +1,173 @@
+/* ------------ */
+.breadcrumbs{
+	background: transparent !important;
+	margin: 0 !important;
+}
+.breadcrumb{
+	padding: 25px 0 !important;
+	background-color: transparent !important;
+	li{
+		padding: 0 !important;
+		margin: 0 !important;
+		+li{
+			&:before{
+				content: "/";
+			    padding: 0px 4px 0 7px;
+				@include fontF($ubuntu, 18px, 400, #A4A4A4);
+			}
+		}
+		a{
+			text-decoration: underline;
+			@include fontF($ubuntu, 16px, 400, $color-text);
+		}
+	}
+	.active{
+		@include fontF($ubuntu, 16px, 400, #A4A4A4);
+	}
+}
+
+.title{
+	padding-bottom: 15px;
+	border-bottom: none;
+}
+.page-wrapper{
+	padding: 40px;
+    background-color: $color-white;
+    box-shadow: 0px 20px 30px rgba(182, 184, 192, 0.2);
+    border-radius: 10px;
+}
+.page-desc{
+	margin-bottom: 15px;
+}
+.page-txt{
+	h1, h2, h3, h4{
+		color: $color-black;
+	}
+	p{
+		padding: 6px 0 !important;
+	}
+	strong{
+		/* color: $color-black;*/
+	}
+	ul{
+		list-style-position: inside;
+		margin-bottom: 15px !important;
+		list-style-type: disc;
+		li{
+			line-height: 1.4;
+		}
+	}
+	ol{
+		list-style-position: inside;
+	}
+	table{
+		border: 1px solid rgba(33,33,33,0.15);
+    	border-collapse: collapse;
+    	td{
+    		padding: 10px 15px;
+		    border: 1px solid rgba(33,33,33,0.15);
+		    word-break: keep-all;
+    	}
+	}
+}
+.page-error{
+	padding: 50px 0;
+	.msg{
+		padding: 0;
+	}
+}
+
+/* Страница поиска */
+.page-search{
+	h4{
+		padding-top: 30px;
+	}
+	.form-inline{
+		display: flex;
+		align-items: center;
+		margin: 30px 0;
+	}
+	.form-control{
+		background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(0,0,0,0.15);
+        margin-right: 15px;
+        color: $color-black;
+	}
+}
+
+
+@media (max-width: 1400px){
+	.title{
+		font-size: 50px;
+	}
+}
+
+@media (max-width: 1270px){
+	.page-txt{
+		padding-bottom: 100px;
+		p{
+			font-size: 16px;
+		}
+		table{
+			font-size: 14px;
+		}
+	}
+	.title{
+		font-size: 35px;
+	}
+}
+
+@media (max-width: 1000px){
+	.page-txt{
+		padding-bottom: 50px;
+	}
+}
+@media (max-width: 767px){
+	.breadcrumbs{
+		/* display: none; */
+		margin: 0;
+		padding: 0 !important;
+	}
+	.breadcrumb{
+		li{
+			a{
+				font-size: 14px;
+			}
+		}
+		.active{
+			font-size: 14px;
+		}
+	}
+	.page-txt{
+		h1{
+			font-size: 24px;
+		}
+		iframe{
+			height: 300px;
+		}
+	}
+
+	/* Страница поиска */
+	.page-search{
+		h4{
+			padding-top: 0;
+		}
+		.form-inline{
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		.form-control{
+			margin-bottom: 15px;
+		}
+	}
+}
+
+@media (max-width: 500px){
+	/* .page-txt{
+		img{
+			float: none;
+			width: auto;
+			height: auto;
+		}
+	} */
+}

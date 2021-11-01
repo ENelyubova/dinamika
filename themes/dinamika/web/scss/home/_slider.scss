@@ -1,0 +1,57 @@
+.slider{
+	position: relative;
+	/* height: 450px;*/
+	overflow: hidden;
+	&-arrows{
+		position: absolute;
+		left: 50%;
+		top: 45%;
+		transform: translate(-50%,-50%);
+	}
+	&-mobile{
+		display: none;
+	}
+}
+/* progress bar */
+.slider-progress{
+    position: absolute;
+	left: 50%;
+	bottom: 0;
+    transform: translateX(-50%);
+	width: 100%;
+	height: 5px;
+	max-width: 1920px;
+	background: transparent;
+    .progress{
+        width: 0%;
+        height: 5px;
+        background: $color-blue; 
+		transition: all 0s linear;
+        &.active{
+        	width: 100%;
+        }
+    }
+}
+
+
+@media (max-width: 1430px){
+	
+}
+@media (max-width: 1270px){
+	
+}
+@media (max-width: 1000px){
+	
+}
+@media (max-width: 767px){
+	
+}
+@media (max-width: 640px){
+	.slider{
+		display: none;
+		&-mobile{
+			position: relative;
+		    display: block;
+		}
+	}
+}

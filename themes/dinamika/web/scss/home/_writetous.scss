@@ -1,0 +1,77 @@
+.writetous{
+	&-text{
+		width: 67%;
+	}
+	&__title{
+		margin-bottom: 15px;
+		font-weight: 500;
+		font-size: 45px;
+	}
+	&__body{
+		margin-bottom: 25px;
+		font-style: italic;
+		color: $color-text;
+	}
+	&-btn{
+		width: 33%;
+	}
+	&__phone{
+		a{
+			display: block;
+			font-weight: 500;
+			font-size: 32px;
+			line-height: 1.4;
+			color: $color-darkblue;
+		}
+	}
+	&__email{
+		a{
+			display: block;
+			text-decoration: underline;
+			line-height: 1.6;
+			color: $color-black;
+		}
+	}
+}
+
+@media (max-width: 1270px){
+	.writetous{
+		&__title{
+			font-size: 35px;
+		}
+		&__phone{
+			a{
+				font-size: 24px;
+			}
+		}
+	}
+}
+@media (max-width: 1000px){
+	
+}
+@media (max-width: 767px){
+	.writetous{
+		&__title{
+			font-size: 24px;
+		}
+		&__phone{
+			a{
+				font-size: 18px;
+			}
+		}
+	}
+}
+@media (max-width: 600px){
+	.writetous{
+		&-block{
+			flex-direction: column;
+		}
+		&-text{
+			width: 100%;
+			margin-bottom: 15px;
+		}
+		&-btn{
+			width: 100%;
+		}
+	}
+}

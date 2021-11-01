@@ -1,0 +1,202 @@
+.footer{
+    background: linear-gradient(0deg, #00244E, #00244E), #0A223D;
+    &-panel{
+        padding: 45px 0;
+    }
+    &-heading{
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255,255,255,.15);
+        @include fontF($ubuntu, 20px, 400, $color-white);
+        a{
+            color: $color-white;
+        }
+    }
+    &-item{
+        ul{
+            li{
+                padding-bottom: 10px;
+                a{
+                    line-height: 1.4;
+                    opacity: 0.7;
+                    @include fontF($ubuntu, 14px, 400, $color-white);
+                    &:hover{
+                        color: $color-white;
+                        opacity: 1;
+                    }
+                }
+                ul{
+                    display: none;
+                }
+            }
+        }
+    }
+    &-logo{
+        width: 25%;
+        .logo{
+            margin-bottom: 20px;
+        }
+    }
+    &-product{
+        width: 33%;
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 250px;
+            li{
+                width: 50%;
+                padding-right: 10px;
+            }
+        }
+    }
+    &-menu{
+        width: 16%;
+    }
+    &-contacts{
+        color: $color-white;
+        a{
+            display: block;
+            line-height: 1.4;
+            @include fontF($ubuntu, 18px, 500, $color-white);
+        }
+        &-item{
+            margin-bottom: 10px;
+            &.footer-contacts-email{
+                a{
+                    text-decoration: underline;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+    &-social{
+        a{
+            margin-right: 10px;
+        }
+    }
+    /*нижняя панель*/
+    &-bottom{
+        padding: 15px 0;
+        border-top: 1px solid rgba(255,255,255,.15);
+    } 
+    &-info{
+        line-height: 1.4;
+        font-size: 14px;
+        color: rgba(255, 255, 255, .3);
+        &-bottom{
+            width: 60%;
+        }
+    }
+    .dc56{
+        width: 33%;
+        p{
+            font-size: 14px;
+            color: $color-white;
+        }
+        a{
+            display: block;
+            margin-right: 35px;
+            width: 106px;
+            height: 24px;
+            background-image: url(../images/icon/DC.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+    .hide-footer{
+        display: none;
+    }
+}
+
+
+@media (max-width: 1270px){
+    .footer{
+        &-heading{
+            font-size: 16px;
+        }
+        &-item{
+            ul{
+                li{
+                    a{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        &-logo{
+            width: 25%;
+            img{
+                width: 170px;
+                height: auto;
+            }
+        }
+        &-info{
+            font-size: 12px;
+        }
+        &-product{
+            width: 25%;
+            ul{
+                li{
+                    padding-bottom: 8px;
+                }
+            }
+        }
+        &-contacts{
+            font-size: 14px;
+            a{
+                font-size: 14px;
+            }
+        }
+        .dc56{
+            p{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px){
+    .footer{
+        &-panel{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+        }
+        &-heading{
+            display: inline-block;
+        }
+        &-item{
+            width: 100%;
+            margin-bottom: 20px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        &-bottom{
+            flex-direction: column;
+            justify-content: center;
+        }
+        &-logo{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        &-info{
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .dc56{
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 767px){
+    .footer{
+        &-item{
+            margin-bottom: 15px;
+        }
+    }
+}

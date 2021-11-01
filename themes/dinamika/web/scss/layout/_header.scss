@@ -1,0 +1,392 @@
+.header{
+	position: relative;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
+	/* верхняя панель */
+	&-top{
+		padding: 15px 0;
+		border-bottom: 1px solid #D9DDE8;
+	}
+	&__item{
+		width: 50%;
+	}
+	&-logo{
+		margin-right: 40px;
+	}
+	&-address{
+		margin-right: 30px;
+		&__point{
+			margin-bottom: 10px;
+		}	
+	}
+	.address-btn-map{
+		margin-right: 15px;
+	}
+	&-phone{
+		margin-right: 25px;
+		a{
+			display: block;
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 1.4;
+			color: $color-black;
+		}
+	}
+	&-callback{
+		&-mobile{
+			display: none;
+		}
+	}
+	.btn-callback{
+		margin-right: 10px;
+		background: $color-orange;
+		.fa-phone{
+			display: none;
+		}
+	}
+	/* основное меню */
+	&-bottom{
+		padding: 10px 0;
+	}
+	&-content-mobile{
+		position: relative;
+	}
+	&-menu{
+		height: 100%;
+		margin: 0 15px;
+		>ul{
+			display: flex;
+			width: 100%;
+			li{
+				position: relative;
+				display: flex;
+				align-items: center;
+				padding-right: 40px;
+				a{
+					position: relative;
+					outline: none;
+					text-decoration: none;
+					transition: .3s;
+					@include fontF($ubuntu, 18px, 500, $color-black);
+					&:after{
+						content: '';
+						display: block;
+						position: absolute;
+						bottom: -5px;
+						left: 50%;
+						width: 0;
+						height: 2px;
+						background: $color-black;
+						transform: translateX(-50%);
+						transition: all 0.3s linear;
+					}
+					&:hover{
+				    	transition: .3s;
+				    }
+				}
+				&:hover{
+					a{
+						&:after{
+							width: 100%;
+							opacity: 1;
+						}
+					}
+				}
+				&:last-child{
+					padding-right: 0;
+				}
+			}
+		}
+	}
+	&-search{
+		width: 33%;
+		&-mobile{
+			display: none;
+		}
+	}
+	.hide-header{
+        display: none;
+    }
+}
+/* Режим работы */
+.operatingModeModal{
+	.modal-body{
+		p{
+			padding-bottom: 0 !important;
+		}
+	}
+}
+
+/* select-form - Подбор оборудования */
+.select__btn{
+	border-radius: 5px 0 0 5px;
+}
+.select-form{
+	position: relative;
+	cursor: pointer;
+	&__btn{
+		position: relative;
+		margin-left: 3px;
+		padding: 15px;
+		border-radius: 0 5px 5px 0;
+		img{
+			transition: .3s;
+		}
+		&.active{
+			img{
+				transform: rotate(180deg);
+				transition: .3s;
+			}
+		}
+	}
+	&__body{
+		display: none;
+		position: absolute;
+		top: 110%;
+		right: 0;
+		width: 300px;
+	    background: $color-blue;
+	    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+		z-index: 15;
+		ul{
+			position: relative;
+			padding: 10px !important;
+			z-index: 10;
+			&:before{
+				content: "";
+			    position: absolute;
+			    z-index: -1;
+			    right: 12px;
+			    top: -4px;
+			    width: 20px;
+			    height: 20px;
+			    background: $color-blue;
+			    transform: rotate(45deg);
+			}
+			li{
+				width: 100%;
+				a{
+					display: block;
+					padding-bottom: 8px;
+					width: 100%;
+					@include fontF($ubuntu, 14px, 400, $color-white);
+					&:hover{
+						opacity: 0.7;
+					}
+				}
+				ul{
+					display: none;
+				}
+				&:last-child{
+					a{
+						border-bottom: none;
+					}
+				}
+			}
+		}
+		&.active{
+			display: block;
+		}
+	}
+}
+/* Выпадающее меню каталога*/ 
+.wrapper-dropdown{
+	/* position: relative;*/
+	cursor: pointer;
+	&__header{
+		/* position: relative;*/
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 15px 20px;
+		padding-left: 45px;
+		border-radius: 5px;
+		background: $color-blue;
+		color: $color-white;
+		@include fontF($ubuntu, 18px, 500, $color-white);
+		&:before{
+			content: url(../images/icon/menu.svg);
+			position: absolute;
+			top: 50%;
+			left: 15px;
+			transform: translateY(-50%);
+		}
+		&.active{
+			&:before{
+				content: url(../images/icon/close-white.svg);
+			}
+		}
+	}
+	&__body{
+		display: none;
+		position: absolute;
+		top: 121%;
+		left: 0;
+		/* width: 300px;*/
+	    background: white;
+    	box-shadow: 0 0 15px rgba(0,0,0,.2);
+		z-index: 15;
+		&:before{
+			content: "";
+		    position: absolute;
+		    left: 20px;
+		    top: -4px;
+		    width: 20px;
+		    height: 20px;
+		    background: white;
+		    transform: rotate(45deg);
+		    z-index: -1;
+		}
+		&.active{
+			display: block;
+		}
+	}
+}
+/* Меню каталога*/
+.catalog-menu{
+	&-box{
+		position: relative;
+		padding: 10px;
+	}
+	&__item{
+		width: calc(100% / 4);
+		margin-bottom: 20px;
+		padding: 10px;
+		&:hover{
+			.catalog-menu__title{
+				color: $color-blue;
+				transition: .3s;
+			}
+		}
+	}
+	&__img{
+		margin-right: 10px;
+	}
+	&__title{
+		color: $color-black;
+		transition: .3s;
+	}
+}
+
+@media (max-width: 1430px){
+	.header{
+		&-logo{
+			margin-right: 20px;
+			img{
+				width: 230px;
+				height: auto;
+			}
+		}
+		&-phone{
+			a{
+				font-size: 16px;
+			}
+		}
+	}
+}
+@media (max-width: 1270px){
+	.header{
+		&__item{
+			width: auto;
+		}
+		&-logo{
+			img{
+				width: 190px;
+			}
+		}
+		&-search{
+			width: auto;
+			&-mobile{
+				display: block;
+				width: 45px;
+				height: 45px;
+				background-color: $color-blue;
+				cursor: pointer;
+				a{
+					height: 100%;
+					width: 100%;
+				}
+			}
+		}
+		.btn-callback{
+			margin-right: 0;
+		}
+	}
+	.select-wrap{
+		display: none;
+	}
+}
+@media (max-width: 1000px){
+	.header{
+		&-top{
+			padding: 10px 0;
+		}
+		&-address{
+			display: none;
+		}
+		&-menu{
+			display: none;
+		}
+	}
+	.wrapper-dropdown{
+		&__header{
+			font-size: 16px;
+		}
+	}
+	.catalog-menu{
+		&__item{
+			width: calc(100% / 3);
+		}
+		&__img{
+			img{
+				width: 70px;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px){
+	.header{
+		&-content-mobile{
+			justify-content: flex-end;
+		}
+		&-logo{
+			img{
+				width: 150px;
+			}
+		}
+		&-phone{
+			margin-right: 0;
+			a{
+				font-size: 14px;
+			}
+		}
+		&-callback-mobile{
+			display: block;
+			margin: 0 5px;
+		}
+		.btn-callback{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0;
+			width: 40px;
+			height: 40px;
+			font-size: 0;
+			.fa-phone{
+				display: block;
+				font-size: 22px;
+			}
+			&-hidden-mobile{
+				display: none;
+			}
+		}
+		&-search-mobile{
+			width: 40px;
+			height: 40px;
+			border-radius: 5px;
+		}
+	}
+	.catalog-menu{
+		display: none;
+	}
+}
